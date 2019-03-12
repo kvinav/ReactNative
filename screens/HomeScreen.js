@@ -19,7 +19,10 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props)
-    let wods = getWods().then(data => data);
+    this.state = { wods: [] }
+    this._wods = getWods().then(data => {
+        this.setState({ wods: data })
+    })
   }
   static navigationOptions = {
     header: null,
@@ -36,9 +39,9 @@ export default class HomeScreen extends React.Component {
           </View>
           <FlatList
           style={styles.flatList}
-          data={this.wods}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({item}) => <WodItem wods={item}/>}
+          data={this.state.wods}
+          keyExtractor={(item) => item.wod.id.toString()}
+          renderItem={({item}) => <WodItem wods={item.wod}/>}
         />
       </View>
 
