@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MoviesAndMe",
-    "slug": "MoviesAndMe",
+    "name": "My Wod Journal",
+    "slug": "mywodjournal",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon2.png",
+    "icon": "./assets/images/icon2.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/icon2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
