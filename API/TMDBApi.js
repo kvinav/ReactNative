@@ -6,6 +6,12 @@ export function getFilmsFromApiWithSearchedText(text, page) {
     .then((response) => response.json())
     .catch((error) => console.error(error))
 }
+export function getFilmsFromApi() {
+	const url = 'http://avignonkevin.com/api/public/index.php/api/wods'
+	 return fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.error(error))
+}
 
 export function getImageFromApi(name) {
 	return 'https://image.tmdb.org/t/p/w300' + name
