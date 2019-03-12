@@ -19,19 +19,12 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props)
-    this._wods = []
+    let wods = getWods().then(data => data);
   }
   static navigationOptions = {
     header: null,
   };
 
-  _loadWods() {
-    getWods().then(data => {
-      this._wods = data
-      this.forceUpdate()
-    });
-    console.log(this._wods);
-  }
 
   render() {
     return (
@@ -41,10 +34,9 @@ export default class HomeScreen extends React.Component {
           My Wod Journal
         </Text>
           </View>
-          <Button title='Rechercher' onPress={() => this._loadWods()}/>
           <FlatList
           style={styles.flatList}
-          data={this._wods}
+          data={this.wods}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({item}) => <WodItem wods={item}/>}
         />
