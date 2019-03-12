@@ -10,9 +10,11 @@ import {
   Button,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { Ionicons } from '@expo/vector-icons';
 
 import { MonoText } from '../components/StyledText';
 import WodItem from '../components/items/WodItem';
+import Header from '../components/Header';
 import { getWods } from '../API/WodApi'
 
 export default class HomeScreen extends React.Component {
@@ -32,11 +34,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-        <Text style={styles.logo}>
-          My Wod Journal
-        </Text>
-          </View>
+        <Header />
           <FlatList
           style={styles.flatList}
           data={this.state.wods}
@@ -57,15 +55,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   header: {
+    flexDirection: 'row',
     height: 50,
     backgroundColor: 'black',
     marginTop: 20,
 
   },
   logo: {
+    flex: 14,
+    color: 'white',
+    paddingTop: 10, 
+    paddingLeft: 10,
+    fontSize: 18,
+   
+  },
+  icon: {
+    flex: 1,
     color: 'white',
     paddingTop: 10,
-    fontSize: 18,
+    paddingRight: 10,
   },
   flatList: {
     padding: 10,
